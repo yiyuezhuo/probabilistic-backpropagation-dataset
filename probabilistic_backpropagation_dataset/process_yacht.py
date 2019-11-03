@@ -1,6 +1,7 @@
 import pandas as pd
+from .utils import loc_data
 
-df = pd.read_csv("raw/Yacht Hydrodynamics/yacht_hydrodynamics.data", delim_whitespace=True, header=None)
+df = pd.read_csv(loc_data("Yacht Hydrodynamics/yacht_hydrodynamics.data"), delim_whitespace=True, header=None)
 
 exog_columns = ['Longitudinal', "Prismatic", "Length-displacement",
     "Beam-draught", "Length-beam", "Froude"]

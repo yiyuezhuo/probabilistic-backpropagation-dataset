@@ -1,4 +1,4 @@
-from datasets import load, listed
+from probabilistic_backpropagation_dataset.datasets import load, listed
 
 for key in listed:
     dat = load(key)

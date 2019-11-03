@@ -9,7 +9,7 @@ The paper `Probabilistic backpropagation for scalable learning of bayesian neura
 See `datasets_test.py`:
 
 ```python
-from datasets import load, listed
+from probabilistic_backpropagation_dataset.datasets import load, listed
 
 for key in listed:
     dat = load(key)

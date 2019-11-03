@@ -1,7 +1,10 @@
 import setuptools
 
-with open("readme.md", "r") as fh:
-    long_description = fh.read()
+import os
+
+data_list = []
+for folder in os.listdir("probabilistic_backpropagation_dataset/raw"):
+    data_list.append('raw/' + folder + '/*')
 
 setuptools.setup(
     name="probabilistic-backpropagation-dataset-yiyuezhuo", # Replace with your own username
@@ -9,12 +12,9 @@ setuptools.setup(
     author="yiyuezhuo",
     author_email="yiyuezhuo@gmail.com",
     description="Datasets used in PB paper(see readme.md for detail)",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
     url="https://github.com/yiyuezhuo/probabilistic-backpropagation-dataset",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "Operating System :: OS Independent",
-    ],
+
+    packages=['probabilistic_backpropagation_dataset'],
+    package_dir={'probabilistic_backpropagation_dataset': 'probabilistic_backpropagation_dataset'},
+    package_data={'probabilistic_backpropagation_dataset': data_list},
 )

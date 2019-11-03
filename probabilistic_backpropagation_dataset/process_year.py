@@ -1,7 +1,8 @@
 import pandas as pd
 import os
+from .utils import loc_data
 
-dst_path = "raw/Year Prediction MSD/YearPredictionMSD.txt"
+dst_path = loc_data("Year Prediction MSD/YearPredictionMSD.txt")
 
 if not os.path.exists(dst_path):
     print("Year Prediction MSD can not be found, downloading...")
@@ -15,7 +16,7 @@ if not os.path.exists(dst_path):
     print("Download complete, start extracting")
     import zipfile
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-        zip_ref.extractall("raw/Year Prediction MSD")
+        zip_ref.extractall(loc_data("Year Prediction MSD"))
     print("Extracting completed")
     
 

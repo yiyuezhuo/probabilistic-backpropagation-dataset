@@ -1,12 +1,13 @@
 import os
 import pandas as pd
+from .utils import loc_data
 
 fname_list = ['test.vw', 'train.vw', 'validation.vw']
 
 dat = set()
 
 for fname in fname_list:
-    path = os.path.join("raw/kin8nm", fname)
+    path = loc_data(os.path.join("kin8nm", fname))
     with open(path) as f:
         for line in f.readlines():
             if line in dat:

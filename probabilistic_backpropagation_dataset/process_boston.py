@@ -1,6 +1,8 @@
 import pandas as pd
 
-df = pd.read_csv("raw/Boston Housing/housing.data",
+from .utils import loc_data
+
+df = pd.read_csv(loc_data("Boston Housing/housing.data"),
     delim_whitespace=True, header=None)
     
 endog_columns = ["MEDV"]

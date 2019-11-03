@@ -1,6 +1,7 @@
 import pandas as pd
+from .utils import loc_data
 
-df = pd.read_csv("raw/Naval Propulsion/UCI CBM Dataset/data.txt",
+df = pd.read_csv(loc_data("Naval Propulsion/UCI CBM Dataset/data.txt"),
     delim_whitespace=True, header=None)
 
 exog_columns = ["lp", "v", "GTT", "GTn", "GGn", "Ts", "Tp", "T48",

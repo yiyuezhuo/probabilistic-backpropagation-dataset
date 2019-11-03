@@ -1,3 +1,4 @@
+import importlib
 
 listed = {
     'Boston Housing': 'boston',
@@ -21,7 +22,7 @@ def load(key):
     if key not in listed:
         raise ValueError("Unknown dataset {}".format(key))
     if key not in module_cache:
-        mod_name = 'process_' + listed[key]
-        module_cache[key] = __import__(mod_name)
+        mod_name = 'probabilistic_backpropagation_dataset.process_' + listed[key]
+        module_cache[key] = importlib.import_module(mod_name)
 
     return extract_from_module(module_cache[key])
